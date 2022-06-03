@@ -1,15 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicialComponent } from './views/inicial/inicial.component';
+import { AuthGuard } from './services/guard/auth.guard';
+import { NotFoundComponent } from './_component/not-found/not-found.component';
+
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'home',
-  pathMatch: 'full'
+  loadChildren: () => import('./_module/public/public.module').then(m => m.PublicModule)
 },
 {
-  path: 'home',
-  component: InicialComponent
+  path: 'privado',
+  canActivate: [AuthGuard],
+  canLoad: [AuthGuard],
+  loadChildren: () => import('./_module/private/private.module').then(m => m.PrivateModule)
+},
+{
+  path: '**',
+  component: NotFoundComponent
 }];
 
 @NgModule({

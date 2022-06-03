@@ -1,0 +1,25 @@
+<div class="background">
+    <div class="containerLogin">
+        <form [formGroup]="form" class="border">
+            <h4>Cadastre seu e-mail</h4>
+            <p>Informe seu e-mail para que possamos cadastrá-lo no sistema Devflix.</p>
+
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail"
+                    formControlName="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Cadastrar</button>
+        </form>
+
+        <div class="goToLogin">
+            <p>Já possui cadastro? <a routerLink="/login">Clique aqui.</a></p>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="formInvalid">
+            <div>
+                Favor digitar um e-mail válido.
+            </div>
+            <button type="button" class="btnClose" (click)="formInvalid = !formInvalid">X</button>
+        </div>
+    </div>
+</div>

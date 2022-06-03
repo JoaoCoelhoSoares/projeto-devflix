@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ApiFilmesService } from 'src/app/services/api-filmes.service';
 
 @Component({
@@ -13,12 +13,17 @@ export class InicialComponent implements OnInit {
   public top3 = [];
   public indiceFilme = 0;
   public paginaCarregada: boolean = false;
+  public dadosDigitados!: string;
 
   constructor(private api: ApiFilmesService) { }
 
   async ngOnInit() {
     this.dadosFilme();
 
+  }
+
+  addItem(newItem: string) {
+    this.dadosDigitados = this.dadosDigitados + newItem;
   }
 
   async dadosFilme() {

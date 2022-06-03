@@ -1,4 +1,3 @@
-<app-menu></app-menu>
 <h3 *ngIf="paginaCarregada == false">Carregando <div class="loader loader--style2" title="1">
         <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;"
@@ -12,12 +11,29 @@
     </div>
 </h3>
 
-<div id="filmePopular">
-    <button class="DevflixButton" (click)="filmeAnterior()">Anterior</button>
-    <button class="DevflixButton" (click)="proximoFilme()">Próximo</button>
-    <p class="titulo"><b>{{filmesPopular?.results[indiceFilme].original_title}}</b></p>
-    <p class="overview">{{filmesPopular?.results[indiceFilme].overview}}</p>
-    <img [src]="'https://image.tmdb.org/t/p/w500'+filmesPopular?.results[indiceFilme].poster_path">
-    <p>Média de votos: {{filmesPopular?.results[indiceFilme].vote_average}}</p>
-    <p>Total de votos: {{filmesPopular?.results[indiceFilme].vote_count}}</p>
+<div class="content">
+    <!--   <div id="filmePopular">
+        <button class="DevflixButton" (click)="filmeAnterior()">Anterior</button>
+        <button class="DevflixButton" (click)="proximoFilme()">Próximo</button>
+        <p class="titulo"><b>{{filmesPopular?.results[indiceFilme].original_title}}</b></p>
+        <p class="overview">{{filmesPopular?.results[indiceFilme].overview}}</p>
+        <img [src]="'https://image.tmdb.org/t/p/w500'+filmesPopular?.results[indiceFilme].poster_path">
+        <p>Média de votos: {{filmesPopular?.results[indiceFilme].vote_average}}</p>
+        <p>Total de votos: {{filmesPopular?.results[indiceFilme].vote_count}}</p>
+    </div> -->
+
+    <div id="divMovie">
+        <button class="DevflixButton" (click)="filmeAnterior()">Anterior</button>
+        <button class="DevflixButton" (click)="proximoFilme()">Próximo</button>
+        <p class="titulo"><b>{{filmesPopular?.results[indiceFilme].original_title}}</b></p>
+        <p class="overview">{{filmesPopular?.results[indiceFilme].overview}}</p>
+        <p>Média de votos: {{filmesPopular?.results[indiceFilme].vote_average}}</p>
+        <p>Total de votos: {{filmesPopular?.results[indiceFilme].vote_count}}</p>
+    </div>
+
+    <div class="poster">
+        <img [src]="'https://image.tmdb.org/t/p/w500'+filmesPopular?.results[indiceFilme].poster_path">
+
+    </div>
+
 </div>

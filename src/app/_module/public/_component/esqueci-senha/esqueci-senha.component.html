@@ -1,0 +1,21 @@
+<div class="background">
+    <div class="containerLogin">
+        <form [formGroup]="form" class="border">
+            <h4>Informe o e-mail</h4>
+            <p>Informe seu e-mail que lhe enviaremos uma nova senha.</p>
+
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail"
+                    formControlName="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Entrar</button>
+        </form>
+
+        <div class="alert alert-danger" *ngIf="formInvalid">
+            <div>
+                E-mail incorreto! Favor informá-lo novamente.
+            </div>
+            <button type="button" class="btnClose" (click)="formInvalid = !formInvalid">X</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+.background {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    background-color: #e50914;
+    height: 100vh;
+
+    .resetPassword {
+        color: #fff;
+        margin: 40px;
+        font-size: 14pt;
+
+        a {
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+
+    .containerLogin {
+        margin: 0 auto;
+
+        form {
+            width: 480px;
+            height: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            h4 {
+                font-size: 20pt;
+                margin-top: 65px;
+            }
+
+            p {
+                margin: 30px 0;
+            }
+
+            input {
+                width: 400px;
+            }
+
+            button {
+                margin-top: 20px;
+                width: 200px;
+            }
+
+        }
+    }
+
+    .alert-danger {
+        width: 480px;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        margin-top: 5%;
+    }
+
+    .btnClose {
+        position: relative;
+        left: 40px;
+        font-weight: 600;
+        font-size: 16pt;
+        align-content: left;
+        background: none;
+        border: none;
+        color: rgb(179, 80, 80);
+    }
+}
+
+.goToLogin {
+    color: #fff;
+    margin: 40px;
+    font-size: 14pt;
+
+    a {
+        color: #fff;
+        font-weight: 600;
+    }
+}

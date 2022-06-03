@@ -1,0 +1,8 @@
+<div class="input-group mb-3 imputBusca">
+    <input type="text" class="form-control" placeholder="Digite o nome do filme ou série"
+        aria-label="Digite o nome do filme ou série" aria-describedby="basic-addon2" #digitado
+        (keydown)="campoDigitado(digitado.value)">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">🔎</button>
+    </div>
+</div>
